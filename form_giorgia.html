@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+    <title>Giorgia Form</title>
+    <link rel="stylesheet" type="text/css" href="default.css"/>
+</head>
+<body>
+<form action="register.php">
+	
+	<fieldset>
+	<legend>Provenienza</legend>
+		Sito: <input type="text"><br>
+		Livello: <input type="text"><br>
+		Datazione: <input type="text">
+	</fieldset>
+
+	<fieldset>
+	<legend>Tipo di contesto</legend>
+		<input type="radio" name="situ" value="In situ" id="rinsitu" onclick="contest_function(this)" checked>In situ
+		<input type="radio" name="situ" value="Non in situ" id="rnoninsitu" onclick="contest_function(this)">Non in situ
+		
+		<div id="insitu">
+			<input type="checkbox" name="contesto" value="Struttura domestica">Struttura domestica<br>
+			<input type="checkbox" name="contesto" value="Struttura pubblica">Struttura pubblica<br>
+			<input type="checkbox" name="contesto" value="Magazzino">Magazzino
+		</div>
+		<div id="noninsitu" style="display: none">
+			<input type="checkbox" name="contesto" value="In superficie">In superficie<br>
+			<input type="checkbox" name="contesto" value="Giacimento secondario">Giacimento secondario
+		</div>
+	</fieldset>
+	
+	<fieldset>
+	<legend>Analisi tipologica</legend>
+		<input type="radio" name="tipo" value="Sigillo" id="rsigillo" onclick="tipo_function(this)" checked>Sigillo
+		<input type="radio" name="tipo" value="Impressione" id="rimpressione" onclick="tipo_function(this)">Impressione
+		
+		<div id="sigillo">
+			<label>Forma sigillo</label>
+			<select name="sigillo">
+				<option value="A stampo">A stampo</option>
+				<option value="Cilindrico">Cilindrico</option>
+				<option value="ND">ND</option>
+			</select>
+			<br>
+			<label>Iconografia</label>
+			<select name="iconografia">
+				<option value="Motivi animali">Motivi animali</option>
+				<option value="Motivi riempitivi">Motivi riempitivi</option>
+				<option value="Motivi vegetali">Motivi vegetali</option>
+				<option value="Figure umane">Figure umane</option>
+			</select>
+		</div>
+		<div id="impressione" style="display: none">
+			<label>Forma faccia</label>
+			<select name="faccia">
+				<option value="Quadrata">Quadrata</option>
+				<option value="Circolare">Circolare</option>
+				<option value="ND">ND</option>
+			</select>
+			<br>
+			<label>Motivo</label>
+			<select name="motivo">
+				<option value="Singolo">Singolo</option>
+				<option value="A coppie">A coppie</option>
+				<option value="Ripetizione">Ripetizione</option>
+			</select>
+		</div>
+	</fieldset>
+	
+	<fieldset>
+	<legend>Descrizione</legend>
+		<textarea name="descrizione" rows="20" cols="140">
+		</textarea>
+	</fieldset>
+	
+	<fieldset>
+	<legend>Note</legend>
+		<textarea name="note" rows="10" cols="140">
+		</textarea>
+	</fieldset>
+	<input type="submit" value="Submit">
+</form>
+
+</body>
+
+<script type="text/javascript">
+function contest_function(elm)
+{
+    if(elm == document.getElementById('rinsitu'))
+    {
+        //document.getElementById('my_div').style.visibility = "hidden";
+        document.getElementById('noninsitu').style.display = "none";
+        document.getElementById('insitu').style.display = "block";
+    }
+    else if(elm == document.getElementById('rnoninsitu'))
+    {
+        //document.getElementById('my_div').style.visibility = "visible";
+        document.getElementById('noninsitu').style.display = "block";
+        document.getElementById('insitu').style.display = "none";
+    }
+}
+
+function tipo_function(elm)
+{
+    if(elm == document.getElementById('rsigillo'))
+    {
+        //document.getElementById('my_div').style.visibility = "hidden";
+        document.getElementById('impressione').style.display = "none";
+        document.getElementById('sigillo').style.display = "block";
+    }
+    else if(elm == document.getElementById('rimpressione'))
+    {
+        //document.getElementById('my_div').style.visibility = "visible";
+        document.getElementById('impressione').style.display = "block";
+        document.getElementById('sigillo').style.display = "none";
+    }
+}
+</script>
+</html>

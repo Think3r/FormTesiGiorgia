@@ -1,0 +1,23 @@
+body, html {
+    font-family: Verdana,Arial, Helvetica, sans-serif;
+    height: 100%;
+    width: 90%;
+    margin:10px;
+}
+body {
+    font-size: 100%;
+    margin-left: 10%;
+}
+
+#insitu, #noninsitu, #impressione, #sigillo {
+    margin-top: 10px;
+}
+
+form {
+    margin-bottom: 30px;
+}
+
+fieldset {
+
+    margin: 10px;
+}
